@@ -1,0 +1,41 @@
+<html>
+    <head> 
+		<link type="text/css" rel="stylesheet"  href="{{ url_for('static', filename='index.css') }}" >
+    <script src="https://kit.fontawesome.com/5b61822651.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+
+    </head>
+   <body style="background-image: linear-gradient(to right, #380036, #2C3159);" >
+    <nav>
+      <ul class="nav-list">
+        <li class="nav-items"><a href="{{url_for('home')}}"><i class="fa-solid fa-terminal"></i>Diabetic Retinopathy Detection</a></li>
+        <!-- <li class="nav-items"><a href="/">Home</a></li>
+        <li class="nav-items"><a href="/">About</a></li>
+        <li class="nav-items"><a href="/">Services</a></li>
+        <li class="nav-items"><a href="/">Career</a></li>
+        <li class="nav-items"><a href="/">Contact</a></li> -->
+        <li class="nav-items"><a href="{{url_for('login')}}"><button class="nav-btn">Login</button></a></li>
+      </ul>
+    </nav>
+
+      <div class="frame">
+        <div class="center">
+            <div class="title">
+                <h1>Select a file to upload</h1>
+                <h1>{{fname}}</h1>
+            </div>
+            <form action = "/uploader" method = "POST"  enctype = "multipart/form-data">
+         		<div class="dropzone">
+            		<img src="http://100dayscss.com/codepen/upload.svg" class="upload-icon" />
+            		<input type="file" name = "file" class="upload-input" />
+            	</div>
+        		<br>
+        		<input type="submit" class="btn" name="uploadbutton"  value="Upload">
+      		</form> 
+    
+        </div>
+    </div>
+   </body>
+</html>

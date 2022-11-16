@@ -1,0 +1,86 @@
+<html>
+    <head> 
+        <link type="text/css" rel="stylesheet"  href="{{ url_for('static', filename='login.css') }}" >
+        <link href='https://fonts.googleapis.com/css?family=Habibi' rel='stylesheet' />
+        <script src="https://kit.fontawesome.com/5b61822651.js" crossorigin="anonymous"></script>
+	      <link rel="preconnect" href="https://fonts.googleapis.com">
+	      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    </head>  
+
+    <body>
+      <nav>
+        <ul class="nav-list">
+          <li class="nav-items"><a href="/"><i class="fa-solid fa-terminal"></i>Diabetic Retinopathy Detection</a></li>
+          <!-- <li class="nav-items"><a href="/">Home</a></li>
+          <li class="nav-items"><a href="/">About</a></li>
+          <li class="nav-items"><a href="/">Services</a></li>
+          <li class="nav-items"><a href="/">Career</a></li>
+          <li class="nav-items"><a href="/">Contact</a></li> -->
+          <li class="nav-items"><a href="{{url_for('login')}}"><button class="nav-btn">Login</button></a></li>
+        </ul>
+      </nav>
+
+    <section>
+      <div class="top"></div>
+      <div class="left"></div>
+      <div class="right"></div>
+      <div class="bottom"></div>
+    </section>
+    
+    <div class="container">
+      <form class="glass login" action="/afterlogin" method = "POST" >
+        <div class="ball"><center><h3 style="font-family: Habibi ">Login</h3></center></ion-icon></div>
+        <div class="log__email log__box">
+          <input
+            type="email"
+            pattern="[a-zA-z0-9-+._]+@[a-zA-z0-9-+._]+\.[a-z]{2,}"
+            class="login__email input-style"
+            placeholder="Email Address"
+            name="_id"
+            required
+          />
+          <ion-icon class="i" name="mail-outline"></ion-icon>
+        </div>
+        <div class="log__pass log__box">
+          <input
+            type="password"
+            class="login__pass input-style"
+            placeholder="Password"
+            required
+            name="psw"
+            value=""
+          />
+          <ion-icon class="i" name="lock-closed-outline"></ion-icon>
+          <!-- <ion-icon class="eye showHide" name="eye-off-outline"></ion-icon> -->
+        </div>
+        <div class="log__remember log__box">
+          <!-- <input
+            type="checkbox"
+            class="log__remember--input"
+            id="log--remember"
+          />
+          <label for="log--remember">Remember me</label> -->
+        </div>
+
+        <button class="login-btn" type="submit">Login Now</button>
+
+        <div class="form__text">
+          <p>not a member ?</p>
+          <a class="form__sign--up" href="{{url_for('register')}}">sign up</a>
+        </div>
+      </form>
+    </div>
+
+    
+   <script src="cutout.js" ></script>
+   <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
